@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 //function prototypes
@@ -17,10 +18,13 @@ void Score();
 void Game();
 bool Questions();
 
+int numOfUsers; 	         //Global counter for number of users
+const float DEFAULT_MONEY = 0.0; //For reseting scores of users
+
 int main() {
 	// skeleton function to call other functions
 
-	char selection; //For menu seletion
+	char selection;  //For menu seletion
 
 	cout << "******************************\n"
 		<< "  Welcome to the Final game!  \n"
@@ -51,7 +55,7 @@ int main() {
 	case 'S': Score();
 		break;
 	default: cout << "Please enter 'G' for the game, 'H' for help\n"
-			<< "or 'S' to access the score menus.\n";
+		<< "or 'S' to access the score menus.\n";
 		cin >> selection;
 		break;
 	}
