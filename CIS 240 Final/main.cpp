@@ -11,10 +11,12 @@
 #include <string>
 using namespace std;
 
-
-int numOfUsers; 	         //Global counter for number of users
-const char DEFAULT_MONEY = '0'; //For reseting scores of users
-typedef string PlayerType[10][2];
+//Define struct for playerName (string) and score (int)
+struct PlayerData
+{
+	string playerName = 0;
+	int score = 0;
+};
 
 //function prototypes
 //Game should be void? Not sure, depends on display
@@ -29,14 +31,19 @@ int main() {
 	// skeleton function to call other functions
 
 	char selection;  //For menu seletion
-	PlayerType playerTable; //To initialize table
+	PlayerData playerOne; //To initialize player struct
 
 	cout << "******************************\n"
 		<< "  Welcome to the Final game!  \n"
 		<< "******************************\n";
 
 	cout << endl << endl;
-	 
+	
+	//Get player name
+	cout << "Enter player name:\n";
+	cin >> playerOne.playerName;
+	cout << "Welcome " << playerOne.playerName << "!";
+
 	//Menu choices
 	cout << "Start by selecting an option\n"
 		<< "from the following:\n"
@@ -57,9 +64,9 @@ int main() {
 	case 'h':
 	case 'H': Help();
 		break;
-	/*case 's':
-	case 'S': InputScore(playerTable, string for playerName, string for score *FROM PLAYGAME()* );
-		break;*/
+		/*case 's':
+		case 'S': InputScore(playerTable, string for playerName, string for score *FROM PLAYGAME()* );
+			break;*/
 	case 't':
 	case 'T': showScore();
 		break;
